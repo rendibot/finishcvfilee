@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TXT to VCF Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Convert TXT to VCF</h1>
+
+        <label for="adminName">Masukkan nama untuk Admin:</label>
+        <input type="text" id="adminName" placeholder="Nama Admin">
+
+        <label for="navyName">Masukkan nama untuk Navy:</label>
+        <input type="text" id="navyName" placeholder="Nama Navy">
+
+        <label for="anggotaName">Masukkan nama untuk Anggota:</label>
+        <input type="text" id="anggotaName" placeholder="Nama Anggota">
+
+        <label for="vcfFileName">Masukkan nama file VCF:</label>
+        <input type="text" id="vcfFileName" placeholder="Nama File VCF">
+
+        <label for="txtFile">Pilih File TXT berisi nomor telepon (opsional):</label>
+        <input type="file" id="txtFile" accept=".txt" onchange="convertTxtToVcf()">
+
+        <label>Apakah ingin memisahkan Admin + Navy dengan Anggota?</label>
+        <div>
+            <input type="radio" id="combineAll" name="splitOption" value="no" checked>
+            <label for="combineAll">Tidak, gabungkan semuanya jadi 1 file VCF</label><br>
+
+            <input type="radio" id="splitFiles" name="splitOption" value="yes">
+            <label for="splitFiles">Ya, pisahkan jadi 2 file VCF</label>
+        </div>
+
+        <textarea id="vcfOutput" rows="15" placeholder="Hasil Konversi"></textarea>
+
+        <button onclick="downloadVCF()">Download VCF</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
